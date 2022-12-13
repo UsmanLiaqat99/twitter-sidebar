@@ -1,0 +1,364 @@
+:root {
+  --c-sidebar: #000000;
+  --c-default: #D9D9D9;
+  --c-active: #1DA1F2;
+  --c-hover: #081018;
+}
+
+aside {
+  width: 280px;
+  border-radius: 24px;
+  padding: 40px;
+  background: var(--c-sidebar);
+}
+aside .logo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  fill: var(--logo-color, var(--c-default));
+  margin-bottom: 36px;
+}
+aside nav {
+  display: grid;
+  grid-gap: 36px;
+}
+aside nav button {
+  --c-color: var(--c-default);
+  --c-background: var(--c-sidebar);
+  --icon-fill: var(--c-background);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  color: var(--c-color);
+}
+aside nav button.active {
+  --icon-fill: var(--c-active);
+  --c-color: var(--c-active);
+}
+aside nav button .icon {
+  margin-right: 16px;
+  position: relative;
+}
+aside nav button .icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+aside nav button > div {
+  display: inline-flex;
+  padding: 10px 20px 10px 12px;
+  margin: -10px -20px -10px -12px;
+  border-radius: 21px;
+  background: var(--c-background);
+}
+aside nav button.home {
+  --icon-fill-size: 0px;
+  --icon-house-s: 1;
+  --icon-outline-o: 1;
+  --icon-outline-s: 1;
+  --icon-feather-left-o: 1;
+  --icon-feather-left-s: 0;
+  --icon-feather-left-x: -7px;
+  --icon-feather-left-y: -3.5px;
+  --icon-feather-left-r: 0deg;
+  --icon-feather-right-o: 1;
+  --icon-feather-right-s: 0;
+  --icon-feather-right-x: -7px;
+  --icon-feather-right-y: -3.5px;
+  --icon-feather-right-r: 0deg;
+}
+aside nav button.home.active {
+  --icon-outline-o: 0;
+  --icon-outline-s: .9;
+  --icon-fill-size: 12px;
+}
+aside nav button.home .icon svg.house {
+  fill: var(--c-color);
+  transform: scale(var(--icon-house-s)) translateZ(0);
+}
+aside nav button.home .icon svg.house .fill {
+  fill: var(--c-active);
+  -webkit-clip-path: circle(var(--icon-fill-size) at 50% 50%);
+          clip-path: circle(var(--icon-fill-size) at 50% 50%);
+}
+aside nav button.home .icon svg.house .outline {
+  opacity: var(--icon-outline-o);
+  transform: scale(var(--icon-outline-s)) translateZ(0);
+  transform-origin: 12px 12px;
+}
+aside nav button.home .icon svg.feather {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  width: 14px;
+  height: 7px;
+  stroke: var(--c-background);
+  fill: var(--c-active);
+  stroke-width: 0.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: var(--icon-feather-left-o);
+  transform: translate(var(--icon-feather-left-x), var(--icon-feather-left-y)) scale(var(--icon-feather-left-s)) rotate(var(--icon-feather-left-r)) translateZ(0);
+}
+aside nav button.home .icon svg.feather.right {
+  opacity: var(--icon-feather-right-o);
+  transform: translate(var(--icon-feather-right-x), var(--icon-feather-right-y)) scale(var(--icon-feather-right-s)) rotate(var(--icon-feather-right-r)) translateZ(0);
+}
+aside nav button.explore {
+  --icon-r: 0deg;
+  --icon-triangle-fill: var(--c-background);
+  --icon-stroke: 1.5px;
+}
+aside nav button.explore.active {
+  --icon-triangle-fill: var(--c-active);
+  --icon-stroke: 2px;
+}
+aside nav button.explore .icon {
+  transform: rotate(var(--icon-r));
+}
+aside nav button.explore .icon svg {
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+aside nav button.explore .icon svg .outline {
+  stroke-width: var(--icon-stroke);
+}
+aside nav button.explore .icon svg .triangle {
+  fill: var(--icon-triangle-fill);
+  stroke-width: 1.5px;
+}
+aside nav button.notifications {
+  --icon-r: 0deg;
+  --icon-ring-x: 0px;
+  --icon-bell-fill: var(--c-background);
+  --icon-stroke: 1.5px;
+}
+aside nav button.notifications.active {
+  --icon-bell-fill: var(--c-active);
+  --icon-stroke: 2px;
+}
+aside nav button.notifications .icon svg {
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transform-origin: 50% 10%;
+  transform: rotate(var(--icon-r)) translateZ(0);
+}
+aside nav button.notifications .icon svg .bell {
+  stroke-width: 1.5px;
+  fill: var(--icon-bell-fill);
+}
+aside nav button.notifications .icon svg .ring {
+  stroke-width: var(--icon-stroke);
+  transform: translateX(var(--icon-ring-x));
+}
+aside nav button.messages {
+  --top-r: 0deg;
+  --icon-stroke: var(--c-color);
+}
+aside nav button.messages.active {
+  --icon-stroke: var(--c-sidebar);
+}
+aside nav button.messages .icon .top {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: 50% 15%;
+  transform: rotateX(var(--top-r));
+}
+aside nav button.messages .icon .top svg {
+  height: 13px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+aside nav button.messages .icon .top svg.default {
+  fill: var(--icon-fill);
+  stroke: var(--icon-stroke);
+}
+aside nav button.messages .icon .top svg.inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotateX(180deg);
+  stroke: var(--c-sidebar);
+}
+aside nav button.messages .icon .top svg.inner rect {
+  fill: #0168A7;
+  stroke: none;
+}
+aside nav button.messages .icon .top svg.inner path {
+  fill: #0168A7;
+}
+aside nav button.messages .icon svg {
+  fill: var(--icon-fill);
+  stroke: var(--icon-stroke);
+  stroke-width: 1.5px;
+}
+aside nav button.messages .icon svg .background {
+  fill: #0168A7;
+}
+aside nav button.bookmark {
+  --icon-default-y: 0px;
+  --icon-background-y: -17.5px;
+  --icon-corner-fill: var(--c-background);
+}
+aside nav button.bookmark.active {
+  --icon-corner-fill: var(--c-active);
+}
+aside nav button.bookmark .icon svg {
+  stroke: currentColor;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+aside nav button.bookmark .icon svg .background {
+  stroke: none;
+  fill: currentColor;
+  transform: translateY(var(--icon-background-y));
+}
+aside nav button.bookmark .icon svg .corner {
+  fill: var(--icon-corner-fill);
+}
+aside nav button.bookmark .icon svg .default {
+  transform: translateY(var(--icon-default-y));
+  fill: var(--icon-fill);
+}
+aside nav button.lists {
+  --icon-pencil-o: 0;
+  --icon-pencil-x: 0;
+  --icon-pencil-y: -.5px;
+  --icon-pencil-r: 45deg;
+  --icon-line: var(--c-color);
+  --icon-line-top: 0px;
+  --icon-line-middle: 0px;
+  --icon-line-bottom: 0px;
+}
+aside nav button.lists.active {
+  --icon-line: var(--c-background);
+}
+aside nav button.lists .icon svg {
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+aside nav button.lists .icon svg.pencil {
+  width: 8px;
+  height: 22px;
+  fill: var(--c-active);
+  stroke: var(--c-sidebar);
+  position: absolute;
+  pointer-events: none;
+  left: 2px;
+  top: -12px;
+  transform-origin: 50% 21px;
+  opacity: var(--icon-pencil-o);
+  transform: translate(var(--icon-pencil-x), var(--icon-pencil-y)) rotate(var(--icon-pencil-r));
+}
+aside nav button.lists .icon svg.list {
+  stroke: currentColor;
+}
+aside nav button.lists .icon svg.list rect {
+  fill: var(--icon-fill);
+}
+aside nav button.lists .icon svg.list path {
+  stroke: var(--icon-line);
+  stroke-dasharray: 10px;
+  stroke-dashoffset: var(--icon-line-top);
+}
+aside nav button.lists .icon svg.list path.middle {
+  stroke-dashoffset: var(--icon-line-middle);
+}
+aside nav button.lists .icon svg.list path.bottom {
+  stroke-dasharray: 5px;
+  stroke-dashoffset: var(--icon-line-bottom);
+}
+aside nav button.profile {
+  --icon-r: 0deg;
+  --icon-eye-r: 90deg;
+  --icon-eye-r-s: 1;
+}
+aside nav button.profile .icon:before, aside nav button.profile .icon:after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 5px;
+  width: 2px;
+  height: 2px;
+  border-radius: 1px;
+  border-radius: 1px;
+  background: var(--c-background);
+  box-shadow: 4px 0 0 var(--c-background);
+  transform: rotateX(var(--icon-eye-r));
+}
+aside nav button.profile .icon:before {
+  left: 9px;
+  transform: scaleX(var(--icon-eye-r-s)) rotateX(var(--icon-eye-r));
+}
+aside nav button.profile .icon svg {
+  fill: var(--icon-fill);
+  stroke: currentColor;
+  stroke-width: 1.5px;
+}
+aside nav button.profile .icon svg .head {
+  transform-origin: 12px 9px;
+  transform: rotate(var(--icon-r));
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #15181C;
+  padding: 40px;
+}
+body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+body .dribbble img {
+  display: block;
+  height: 28px;
+}
+body .twitter {
+  position: fixed;
+  display: block;
+  right: 64px;
+  bottom: 14px;
+}
+body .twitter svg {
+  width: 32px;
+  height: 32px;
+  fill: #1da1f2;
+}
